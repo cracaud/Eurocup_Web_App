@@ -282,11 +282,7 @@ ax.plot([85, 115], [100, 130], ls="--", c="lightgrey", linewidth=0.5)
 ax.plot([90, 130], [85, 125], ls="--", c="lightgrey", linewidth=0.5)
 ax.plot([95, 130], [85, 120], ls="--", c="lightgrey", linewidth=0.5)
 ax.plot([100, 130], [85, 115], ls="--", c="lightgrey", linewidth=0.5)
-xmin = result['ORTG'].min() + 1
-xmax = result['ORTG'].max() + 1
-ymin = result['DRTG'].min() + 1
-ymax = result['DRTG'].max() + 1
-ax.set(xlim=(xmin, xmax), ylim=(ymax, ymin))
+ax.set(xlim=(90, 120), ylim=(120, 90))
 
 for x0, y0, path in zip(x, y,paths):
     ab = AnnotationBbox(getImage(path), (x0, y0), frameon=False)
