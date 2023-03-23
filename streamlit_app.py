@@ -547,6 +547,8 @@ with row1_col2:
         statsdf = df
     st.dataframe(statsdf.style.format("{:.0f}"))
     st.markdown("")
+    st.markdown("")
+    st.markdown("")
     st.header('Shot Chart')
     st.pyplot(fig2)
     
