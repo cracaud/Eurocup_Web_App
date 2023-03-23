@@ -554,5 +554,3 @@ st.write("GLOSSARY :")
 st.write("ORTG : Offensive Rating / DRTG : Defensive Rating / NetRTG : Net Rating / eFG% : Effective Field Goal / TS% : True Shooting / FTAr : Free Throw rate")
 st.write("FGA% 2PT : Percent of Field Goals Attempted (2 Pointers) / FGA% 3PT : Percent of Field Goals Attempted (3 Pointers) / PTS% 2PT : Percent of Points (2 Pointers) / PTS% 3PT : Percent of Points (3 Pointers) / PTS% FT : Percent of Points (Free Throws)")
 st.write("FGM% AST : Percent of Point Field Goals Made Assisted / FGM% UAST : Percent of Point Field Goals Made Unassisted")
-
-st.dataframe(values)
