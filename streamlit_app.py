@@ -218,7 +218,7 @@ teamselection = st.sidebar.selectbox('Team :',['PARIS BASKETBALL', '7BET-LIETKAB
                                                'TURK TELEKOM ANKARA', 'U-BT CLUJ-NAPOCA', 'UMANA REYER VENICE', 'VEOLIA TOWERS HAMBURG'], label_visibility="collapsed")
 st.sidebar.write("##")
 st.sidebar.write('*Rounds available : from ',df_round['Round'].min(),' to ', df_round['Round'].max())
-st.sidebar.write('Round 19 correspond to the first round of the Playoffs')
+st.sidebar.write('*Round 19 correspond to the first round of the Playoffs')
 
 #VIZ 1
 #Graph
@@ -425,6 +425,10 @@ if set(['2FGM']).issubset(rim.columns):
    rim['2FGM'] = rim['2FGM']
 else:
     rim['2FGM'] = 0
+if set(['2FGA']).issubset(rim.columns):
+   rim['2FGA'] = rim['2FGA']
+else:
+    rim['2FGA'] = 0
 teamrim = rim['2FGM'] / (rim['2FGM'] + rim['2FGA']) * 100
 paint = shootingdf[shootingdf['zone_details'] == 'Paint']
 paint = paint.set_index('ID_ACTION')
@@ -434,6 +438,10 @@ if set(['2FGM']).issubset(paint.columns):
    paint['2FGM'] = paint['2FGM']
 else:
     paint['2FGM'] = 0
+if set(['2FGA']).issubset(paint.columns):
+   paint['2FGA'] = paint['2FGA']
+else:
+    paint['2FGA'] = 0
 teampaint = paint['2FGM'] / (paint['2FGM'] + paint['2FGA']) * 100
 short2 = shootingdf[shootingdf['zone_details'] == 'Short 2']
 short2 = short2.set_index('ID_ACTION')
@@ -443,6 +451,10 @@ if set(['2FGM']).issubset(short2.columns):
    short2['2FGM'] = short2['2FGM']
 else:
     short2['2FGM'] = 0
+if set(['2FGA']).issubset(short2.columns):
+   short2['2FGA'] = short2['2FGA']
+else:
+    short2['2FGA'] = 0
 teamshort2 = short2['2FGM'] / (short2['2FGM'] + short2['2FGA']) * 100
 long2 = shootingdf[shootingdf['zone_details'] == 'Long 2']
 long2 = long2.set_index('ID_ACTION')
@@ -452,15 +464,23 @@ if set(['2FGM']).issubset(long2.columns):
    long2['2FGM'] = long2['2FGM']
 else:
     long2['2FGM'] = 0
+if set(['2FGA']).issubset(long2.columns):
+   long2['2FGA'] = long2['2FGA']
+else:
+    long2['2FGA'] = 0
 teamlong2 = long2['2FGM'] / (long2['2FGM'] + long2['2FGA']) * 100
 three = shootingdf[shootingdf['zone_details'] == '3pts']
 three = three.set_index('ID_ACTION')
 three = three.T
 three = three.drop(labels="zone_details")
-if set(['2FGM']).issubset(three.columns):
-   three['2FGM'] = three['2FGM']
+if set(['3FGM']).issubset(three.columns):
+   three['3FGM'] = three['3FGM']
 else:
-    three['2FGM'] = 0
+    three['3FGM'] = 0
+if set(['3FGA']).issubset(three.columns):
+   three['3FGA'] = three['3FGA']
+else:
+    three['3FGA'] = 0
 teamthree = three['3FGM'] / (three['3FGM'] + three['3FGA']) * 100
 bar1 = pd.concat([teamrim, teampaint, teamshort2, teamlong2, teamthree], axis=1)
 bar1 = bar1.T
@@ -475,6 +495,10 @@ if set(['2FGM']).issubset(rim.columns):
    rim['2FGM'] = rim['2FGM']
 else:
     rim['2FGM'] = 0
+if set(['2FGA']).issubset(rim.columns):
+   rim['2FGA'] = rim['2FGA']
+else:
+    rim['2FGA'] = 0
 teamrim = (rim['2FGM'] + rim['2FGA'])
 paint = shootingdf[shootingdf['zone_details'] == 'Paint']
 paint = paint.set_index('ID_ACTION')
@@ -484,6 +508,10 @@ if set(['2FGM']).issubset(paint.columns):
    paint['2FGM'] = paint['2FGM']
 else:
     paint['2FGM'] = 0
+if set(['2FGA']).issubset(paint.columns):
+   paint['2FGA'] = paint['2FGA']
+else:
+    paint['2FGA'] = 0
 teampaint = (paint['2FGM'] + paint['2FGA'])
 short2 = shootingdf[shootingdf['zone_details'] == 'Short 2']
 short2 = short2.set_index('ID_ACTION')
@@ -493,6 +521,10 @@ if set(['2FGM']).issubset(short2.columns):
    short2['2FGM'] = short2['2FGM']
 else:
     short2['2FGM'] = 0
+if set(['2FGA']).issubset(short2.columns):
+   short2['2FGA'] = short2['2FGA']
+else:
+    short2['2FGA'] = 0
 teamshort2 = (short2['2FGM'] + short2['2FGA'])
 long2 = shootingdf[shootingdf['zone_details'] == 'Long 2']
 long2 = long2.set_index('ID_ACTION')
@@ -502,15 +534,23 @@ if set(['2FGM']).issubset(long2.columns):
    long2['2FGM'] = long2['2FGM']
 else:
     long2['2FGM'] = 0
+if set(['2FGA']).issubset(long2.columns):
+   long2['2FGA'] = long2['2FGA']
+else:
+    long2['2FGA'] = 0
 teamlong2 = (long2['2FGM'] + long2['2FGA'])
 three = shootingdf[shootingdf['zone_details'] == '3pts']
 three = three.set_index('ID_ACTION')
 three = three.T
 three = three.drop(labels="zone_details")
-if set(['2FGM']).issubset(three.columns):
-   three['2FGM'] = three['2FGM']
+if set(['3FGM']).issubset(three.columns):
+   three['3FGM'] = three['3FGM']
 else:
-    three['2FGM'] = 0
+    three['3FGM'] = 0
+if set(['3FGA']).issubset(three.columns):
+   three['3FGA'] = three['3FGA']
+else:
+    three['3FGA'] = 0
 teamthree = (three['3FGM'] + three['3FGA'])
 bar2 = pd.concat([teamrim, teampaint, teamshort2, teamlong2, teamthree], axis=1)
 bar2['tot'] = bar2[0] + bar2[1] + bar2[2] + bar2[3] + bar2[4]
