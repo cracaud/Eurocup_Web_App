@@ -218,6 +218,7 @@ teamselection = st.sidebar.selectbox('Team :',['PARIS BASKETBALL', '7BET-LIETKAB
                                                'TURK TELEKOM ANKARA', 'U-BT CLUJ-NAPOCA', 'UMANA REYER VENICE', 'VEOLIA TOWERS HAMBURG'], label_visibility="collapsed")
 st.sidebar.write("##")
 st.sidebar.write('*Rounds available : from ',df_round['Round'].min(),' to ', df_round['Round'].max())
+st.sidebar.write('Round 19 correspond to the first round of the Playoffs')
 
 #VIZ 1
 #Graph
