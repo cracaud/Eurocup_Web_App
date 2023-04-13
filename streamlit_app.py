@@ -41,8 +41,8 @@ df_round = pd.read_csv("Data Eurocup - Shots.csv")
 #Filters
 st.sidebar.header('Filters')
 st.sidebar.write("Select a range of rounds :")
-begin = st.sidebar.slider('First game :', 1, 18, 1)
-end = st.sidebar.slider('Last game :', 1, 18, 18)
+begin = st.sidebar.slider('First game :', 1, 19, 1)
+end = st.sidebar.slider('Last game :', 1, 19, 18)
 location = st.sidebar.selectbox('Home / Away :', ('All', 'Home', 'Away'))
 
 #Filtering data
